@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class area{
+    private:
+        int length, breadth;
+    public:
+        area(int l, int b){
+            length = l;
+            breadth = b;
+        }
+
+        void display(){
+            cout << "Length is: " << length << endl;
+            cout << "Breadth is: " << breadth << endl;
+            cout << "Area of rectangle is: " << length * breadth << endl;
+        }   
+};
+
+int main(){
+    int length, breadth;
+    cout << "Enter Length: ";
+    cin >> length;
+
+    cout << "Enter Breadth: ";
+    cin >> breadth;
+
+    area a1(length, breadth);
+    a1.display();
+    return 0;
+}
