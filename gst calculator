@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>GST Calculator</title>
+
+<script>
+function calculateGST()
+{
+    var amount = parseFloat(document.gstForm.amount.value);
+    var rate = parseFloat(document.gstForm.rate.value);
+
+    var gst = (amount * rate) / 100;
+    var total = amount + gst;
+
+    document.gstForm.gstAmount.value = gst;
+    document.gstForm.totalAmount.value = total;
+}
+</script>
+
+</head>
+<body>
+
+<h1>GST Calculator</h1>
+<form name="gstForm">
+Amount:
+<input type="text" name="amount">
+<br><br>
+
+GST Rate:
+<select name="rate">
+    <option value="5">5%</option>
+    <option value="12">12%</option>
+    <option value="18">18%</option>
+    <option value="28">28%</option>
+</select>
+<br><br>
+<input type="button" value="Calculate GST" onclick="calculateGST()">
+<br><br>
+<input type="text" name="gstAmount" readonly placeholder="GST Amount">
+<br><br>
+<input type="text" name="totalAmount" readonly placeholder="Total Amount">
+</form>
+
+</body>
+</html>
